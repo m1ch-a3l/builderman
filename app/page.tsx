@@ -135,7 +135,7 @@ function BookListing({ initial }: { initial: BookItem }) {
                   </div>
                   <div>
                     <p className="text-[10px] tracking-[0.2em] uppercase font-body text-stone mb-1">Price</p>
-                    <p className="font-body text-sm text-ink">${selected.price.toFixed(2)}</p>
+                    <p className="font-body text-sm text-ink">${(selected.price ?? 0).toFixed(2)}</p>
                   </div>
                 </div>
 
