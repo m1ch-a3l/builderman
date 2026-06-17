@@ -48,7 +48,7 @@ export default function BookCard({ book, index }: BookCardProps) {
             src={book.coverImage}
             alt={`Cover of ${book.title}`}
             fill
-            className="object-contain"
+            className="object-cover object-center"
             sizes="120px"
           />
         </div>
