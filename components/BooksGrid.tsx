@@ -281,22 +281,60 @@ export default function BooksGrid() {
       </section>
 
       {/* ── Where to buy ── */}
-      <section className="py-16" style={{ backgroundColor: "#F8F6F1" }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
-          <Animate variant="fadeUp">
-            <p
-              className="font-display font-black text-ink uppercase mb-10"
-              style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)" }}
-            >
-              Books are available on
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#0B1440" }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <Animate variant="fadeUp" className="text-center mb-14">
+            <p className="font-body text-xs tracking-[0.28em] uppercase mb-4" style={{ color: "#4EC5BF" }}>
+              Available Worldwide
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14">
-              {["Amazon", "Apple Books", "Barnes & Noble", "Bookshop.org", "Kobo"].map((store) => (
-                <span key={store} className="font-body font-semibold text-stone text-sm tracking-wide">
-                  {store}
-                </span>
-              ))}
-            </div>
+            <h2
+              className="font-display font-black text-white uppercase leading-tight"
+              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)" }}
+            >
+              Pick up your copy today
+            </h2>
+          </Animate>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { name: "Amazon", sub: "Print & Kindle" },
+              { name: "Apple Books", sub: "iPhone & iPad" },
+              { name: "Barnes & Noble", sub: "Print & Nook" },
+              { name: "Bookshop.org", sub: "Independent stores" },
+              { name: "Kobo", sub: "eBook & audiobook" },
+            ].map((store, i) => (
+              <Animate key={store.name} variant="fadeUp" delay={i * 0.07}>
+                <div
+                  className="flex flex-col items-center text-center px-5 py-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.04)",
+                    borderColor: "rgba(255,255,255,0.08)",
+                  }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center mb-4 transition-colors"
+                    style={{ backgroundColor: "rgba(78,197,191,0.12)" }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4EC5BF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                  </div>
+                  <p className="font-display font-bold text-white text-sm leading-tight mb-1">
+                    {store.name}
+                  </p>
+                  <p className="font-body text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    {store.sub}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
+
+          <Animate variant="fadeUp" delay={0.4} className="text-center mt-12">
+            <p className="font-body text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Also available at local bookshops and church bookstores across Ghana and West Africa.
+            </p>
           </Animate>
         </div>
       </section>
