@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import BookCard from "./BookCard";
+import Animate from "./Animate";
 import { books } from "@/lib/data";
 
 function FadeIn({
@@ -67,7 +68,7 @@ export default function BooksGrid() {
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-12 lg:gap-20 items-center">
-            <FadeIn className="flex flex-col items-center">
+            <Animate variant="slideRight" className="flex flex-col items-center">
               <div className="relative flex items-center justify-center w-full" style={{ minHeight: 320 }}>
                 <div className="absolute w-52 h-52 rounded-full" style={{ backgroundColor: "#F5F6FA" }} />
                 <div
@@ -84,9 +85,9 @@ export default function BooksGrid() {
                   />
                 </div>
               </div>
-            </FadeIn>
+            </Animate>
 
-            <FadeIn delay={0.15}>
+            <Animate variant="slideLeft" delay={0.15}>
               <p className="text-xs tracking-[0.28em] uppercase font-body mb-4" style={{ color: "#4EC5BF" }}>
                 Latest Release · {featured.year}
               </p>
@@ -116,7 +117,7 @@ export default function BooksGrid() {
                   Buy Now
                 </Link>
               </div>
-            </FadeIn>
+            </Animate>
           </div>
         </div>
       </section>
@@ -124,7 +125,7 @@ export default function BooksGrid() {
       {/* ── Grid of remaining books ── */}
       <section className="py-24 lg:py-32" style={{ backgroundColor: "#F5F6FA" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <FadeIn className="text-center mb-16 max-w-2xl mx-auto">
+          <Animate variant="fadeDown" className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-xs tracking-[0.28em] uppercase font-body mb-3" style={{ color: "#4EC5BF" }}>
               More Titles
             </p>
@@ -134,7 +135,7 @@ export default function BooksGrid() {
             >
               Explore the Full Collection
             </h2>
-          </FadeIn>
+          </Animate>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {rest.map((book, index) => (

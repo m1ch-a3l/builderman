@@ -3,10 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Animate from "@/components/Animate";
 import { books, pressQuotes } from "@/lib/data";
 import { BookOpen, Award, Globe, GraduationCap, Quote } from "lucide-react";
 
@@ -40,20 +41,6 @@ const audiences = [
   },
 ];
 
-function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const shouldReduce = useReducedMotion();
-  return (
-    <motion.div
-      initial={shouldReduce ? { opacity: 1 } : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ delay, duration: 0.6, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 type BookItem = (typeof books)[number];
 
@@ -245,7 +232,7 @@ export default function Home() {
         {/* ── Audience cards ── */}
         <section className="py-24 lg:py-32" style={{ backgroundColor: "#F5F6FA" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <FadeIn className="text-center mb-16 max-w-2xl mx-auto">
+            <Animate variant="fadeDown" className="text-center mb-16 max-w-2xl mx-auto">
               <p className="text-xs tracking-[0.28em] uppercase font-body mb-3"
                  style={{ color: "#4EC5BF" }}>Ministry & Writing</p>
               <h2 className="font-body font-bold text-ink leading-tight"
@@ -256,11 +243,11 @@ export default function Home() {
               {/* Teal accent dot */}
               <div className="hidden lg:block absolute right-12 top-8 w-6 h-6 rounded-full"
                    style={{ backgroundColor: "#4EC5BF" }} />
-            </FadeIn>
+            </Animate>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {audiences.map(({ title, desc, book }, i) => (
-                <FadeIn key={title} delay={i * 0.1}>
+                <Animate key={title} variant="scaleUp" delay={i * 0.12}>
                   <div
                     className="group relative rounded-2xl px-6 pt-10 pb-7 h-full flex flex-col items-center text-center cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                     style={{ backgroundColor: "#0B1440" }}
@@ -287,7 +274,7 @@ export default function Home() {
                       Find out more →
                     </Link>
                   </div>
-                </FadeIn>
+                </Animate>
               ))}
             </div>
           </div>
@@ -317,7 +304,7 @@ export default function Home() {
                style={{ backgroundColor: "rgba(78,197,191,0.15)" }} />
 
           <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
-            <FadeIn>
+            <Animate variant="fade" duration={1.1}>
               <p className="text-xs tracking-[0.3em] uppercase font-body mb-8"
                  style={{ color: "#4EC5BF" }}>
                 — A word from the author
@@ -335,7 +322,7 @@ export default function Home() {
                 style={{ backgroundColor: "#4EC5BF", color: "#0B1440" }}>
                 Read the Full Story →
               </Link>
-            </FadeIn>
+            </Animate>
           </div>
         </section>
 
@@ -345,16 +332,16 @@ export default function Home() {
         {/* ── Press quotes ── */}
         <section className="py-24 lg:py-32" style={{ backgroundColor: "#F5F6FA" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <FadeIn className="text-center mb-16">
+            <Animate variant="fadeDown" className="text-center mb-16">
               <h2 className="font-body font-bold text-ink"
                   style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)" }}>
                 Hear From Those{" "}
                 <em className="font-display italic" style={{ color: "#4EC5BF" }}>Impacted</em>
               </h2>
-            </FadeIn>
+            </Animate>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredQuotes.map((q, i) => (
-                <FadeIn key={q.id} delay={i * 0.1}>
+                <Animate key={q.id} variant="slideLeft" delay={i * 0.13}>
                   <blockquote className="bg-white rounded-2xl p-7 h-full flex flex-col gap-4"
                               style={{ boxShadow: "0 2px 16px rgba(11,20,64,0.06)" }}>
                     <p className="font-display italic text-ink text-lg leading-snug flex-1">
@@ -370,16 +357,16 @@ export default function Home() {
                       )}
                     </footer>
                   </blockquote>
-                </FadeIn>
+                </Animate>
               ))}
             </div>
-            <FadeIn className="mt-10 text-center">
+            <Animate variant="fadeUp" className="mt-10 text-center">
               <Link href="/press"
                 className="inline-flex items-center text-sm font-body font-medium tracking-wide underline underline-offset-4"
                 style={{ color: "#4EC5BF" }}>
                 View all press →
               </Link>
-            </FadeIn>
+            </Animate>
           </div>
         </section>
 
@@ -388,7 +375,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-14 sm:h-20 lg:h-24 pointer-events-none"
                style={{ backgroundColor: "#F5F6FA", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 100%)" }} />
           <div className="max-w-2xl mx-auto px-6 text-center">
-            <FadeIn>
+            <Animate variant="scaleUp">
               <p className="text-xs tracking-[0.3em] uppercase font-body mb-4"
                  style={{ color: "#4EC5BF" }}>Stay Connected</p>
               <h2 className="font-body font-bold text-white mb-4"
@@ -403,7 +390,7 @@ export default function Home() {
                 style={{ backgroundColor: "#4EC5BF", color: "#0B1440" }}>
                 Subscribe to the Newsletter →
               </Link>
-            </FadeIn>
+            </Animate>
           </div>
         </section>
       </main>
