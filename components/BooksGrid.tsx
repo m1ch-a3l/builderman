@@ -344,12 +344,10 @@ export default function BooksGrid() {
             </h2>
           </Animate>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-
-            {/* Amazon */}
+          <div className="flex justify-center">
             <Animate variant="fadeUp" delay={0}>
-              <div className="flex flex-col items-center text-center px-5 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#131921" }}>
-                <svg viewBox="0 0 603 182" className="w-28 mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex flex-col items-center text-center px-12 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#131921" }}>
+                <svg viewBox="0 0 603 182" className="w-40 mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M373 141c-48 34-118 52-178 52C118 193 42 163 -2 111c-4-3 0-8 4-5 56 32 125 51 197 51 49 0 102-10 151-31 7-3 13 5 23 15z" fill="#FF9900"/>
                   <path d="M390 122c-5-6-33-3-46-2-4 1-5-3-1-5 22-16 59-11 63-6 4 5-1 42-22 59-3 2-6 1-5-2 5-12 15-38 11-44z" fill="#FF9900"/>
                   <path d="M350 20v-9h-49v9l19 1v60l-20 1v9h51v-9l-19-1V31l18-11zM138 79l-16-58H95l-16 57-15-57H36l24 82h27l16-55 15 55h27l25-82h-27l-16 58zM232 9c-28 0-47 19-47 46 0 27 19 44 47 44 28 0 47-17 47-44C279 28 260 9 232 9zm0 72c-14 0-21-11-21-27 0-15 7-27 21-27 14 0 21 12 21 27 0 16-7 27-21 27zM469 11h-27l-21 32-21-32h-28l35 50-37 52h27l23-35 23 35h28l-37-52 35-50zM560 54c0-25-14-43-41-43-27 0-44 19-44 45 0 27 17 44 46 44 14 0 26-4 36-12l-8-14c-8 6-17 9-27 9-14 0-22-7-23-22h62c0-2 0-5-1-7zm-61-5c1-13 8-21 20-21 12 0 18 8 19 21h-39z" fill="white"/>
@@ -357,63 +355,6 @@ export default function BooksGrid() {
                 <p className="font-body text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Print &amp; Kindle</p>
               </div>
             </Animate>
-
-            {/* Apple Books */}
-            <Animate variant="fadeUp" delay={0.07}>
-              <div className="flex flex-col items-center text-center px-5 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#1c1c1e" }}>
-                <div className="flex items-center gap-2 mb-3">
-                  <svg viewBox="0 0 814 1000" className="w-8 h-8" fill="white">
-                    <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-105.6c-43.5-58.6-79.4-150.3-79.4-237.2 0-199.8 130.5-305.4 259.3-305.4 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.3-49.2 188.3-49.2 30.4 0 109.1 2.6 163 67.9zm-234.5-191.4c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z"/>
-                  </svg>
-                  <span className="font-semibold text-white text-base tracking-tight">Books</span>
-                </div>
-                <p className="font-body text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>iPhone &amp; iPad</p>
-              </div>
-            </Animate>
-
-            {/* Barnes & Noble */}
-            <Animate variant="fadeUp" delay={0.14}>
-              <div className="flex flex-col items-center justify-center text-center px-5 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#1D562E" }}>
-                <div className="mb-3">
-                  <svg viewBox="0 0 120 44" className="w-28" fill="none">
-                    <text x="6" y="32" fontSize="28" fontWeight="900" fill="white" fontFamily="Georgia, serif" letterSpacing="-1">B&amp;N</text>
-                  </svg>
-                  <p className="font-body font-semibold text-white text-[10px] tracking-[0.18em] uppercase -mt-1">BOOKSELLERS</p>
-                </div>
-                <p className="font-body text-xs mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Print &amp; Nook</p>
-              </div>
-            </Animate>
-
-            {/* Bookshop.org */}
-            <Animate variant="fadeUp" delay={0.21}>
-              <div className="flex flex-col items-center text-center px-5 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#F5EFE4" }}>
-                <div className="mb-3 flex flex-col items-center">
-                  <svg viewBox="0 0 48 48" className="w-10 h-10 mb-1" fill="none">
-                    <rect x="8" y="6" width="14" height="36" rx="2" fill="#3D3327"/>
-                    <rect x="24" y="6" width="14" height="36" rx="2" fill="#7C6850"/>
-                    <line x1="21" y1="6" x2="21" y2="42" stroke="#3D3327" strokeWidth="1.5"/>
-                  </svg>
-                  <span className="font-bold text-sm tracking-tight" style={{ color: "#3D3327" }}>bookshop</span>
-                  <span className="text-[9px] tracking-widest uppercase" style={{ color: "#7C6850" }}>.org</span>
-                </div>
-                <p className="font-body text-xs" style={{ color: "#7C6850" }}>Independent stores</p>
-              </div>
-            </Animate>
-
-            {/* Kobo */}
-            <Animate variant="fadeUp" delay={0.28}>
-              <div className="flex flex-col items-center text-center px-5 py-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" style={{ backgroundColor: "#1c1c1c" }}>
-                <div className="mb-3">
-                  <svg viewBox="0 0 120 44" className="w-24" fill="none">
-                    <circle cx="22" cy="22" r="18" fill="#E3173E"/>
-                    <path d="M16 12 L16 32 M16 22 L26 12 M16 22 L26 32" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <text x="44" y="31" fontSize="22" fontWeight="700" fill="white" fontFamily="Arial, sans-serif">obo</text>
-                  </svg>
-                </div>
-                <p className="font-body text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>eBook &amp; Audiobook</p>
-              </div>
-            </Animate>
-
           </div>
 
           <Animate variant="fadeUp" delay={0.4} className="text-center mt-12">
