@@ -38,10 +38,10 @@ export default function BooksGrid() {
   const quote = pressQuotes[quoteIndex];
 
   return (
-    <div style={{ backgroundColor: "#F8F6F1" }}>
+    <div className="pt-16" style={{ backgroundColor: "#F8F6F1" }}>
 
       {/* ── Hero — cycling book cover on dark navy ── */}
-      <section className="relative pt-36 pb-10 lg:pt-44 lg:pb-16 overflow-hidden" style={{ backgroundColor: "#0d1a4a" }}>
+      <section className="relative mx-4 lg:mx-8 mt-4 rounded-3xl pt-14 pb-10 lg:pt-16 lg:pb-14 overflow-hidden" style={{ backgroundColor: "#0d1a4a" }}>
         {/* Giant background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <span

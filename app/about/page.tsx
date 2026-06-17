@@ -25,16 +25,32 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="bg-parchment pt-16">
-        {/* Page header */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
-          <h1 className="font-display text-5xl lg:text-7xl font-bold text-ink tracking-tight mb-6">
-            About
-          </h1>
-          <p className="text-stone text-lg max-w-xl leading-relaxed">
-            Pastor, author, strategic leader, and transformational educator
-            empowering leaders across Africa and beyond.
-          </p>
-        </div>
+        {/* ── Banner hero ── */}
+        <section className="mx-4 lg:mx-8 mt-4 rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#0d1a4a", minHeight: 220 }}>
+          <div className="max-w-7xl mx-auto px-8 lg:px-14 py-12 flex items-center justify-between gap-8">
+            <div className="max-w-lg">
+              <p className="font-body text-xs tracking-[0.22em] uppercase mb-3" style={{ color: "#4EC5BF" }}>
+                Pastor · Author · Strategic Educator
+              </p>
+              <h1 className="font-display font-black text-white leading-tight mb-3" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)" }}>
+                About Rev. Acheampong<br />E.S. Builderman
+              </h1>
+              <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Transformational educator, pastor, and author empowering leaders across Africa and beyond for over fifteen years.
+              </p>
+            </div>
+            <div className="hidden lg:block relative shrink-0 rounded-2xl overflow-hidden" style={{ width: 140, height: 186 }}>
+              <Image
+                src="/author.png"
+                alt="Rev. Acheampong E.S. Builderman"
+                fill
+                className="object-cover object-top"
+                sizes="140px"
+                priority
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Main bio section */}
         <section className="bg-cream py-24">

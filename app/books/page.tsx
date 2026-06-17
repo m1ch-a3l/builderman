@@ -13,7 +13,7 @@ export default function BooksPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main style={{ backgroundColor: "#F8F6F1" }}>
         <BooksGrid />
       </main>
       <Footer />
