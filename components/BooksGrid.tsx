@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,13 +9,21 @@ import { books, pressQuotes } from "@/lib/data";
 import Animate from "./Animate";
 
 export default function BooksGrid() {
-  const featured = books.find((b) => b.featured)!;
+  const [heroIndex, setHeroIndex] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [quoteDir, setQuoteDir] = useState(0);
 
   const VISIBLE = 4;
   const maxStart = Math.max(0, books.length - VISIBLE);
+  const heroBook = books[heroIndex];
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % books.length);
+    }, 3000);
+    return () => clearInterval(t);
+  }, []);
 
   function slideCarousel(dir: number) {
     setCarouselIndex((i) => Math.max(0, Math.min(i + dir, maxStart)));
@@ -32,74 +40,115 @@ export default function BooksGrid() {
   return (
     <div style={{ backgroundColor: "#F8F6F1" }}>
 
-      {/* ── Hero — "New Release" with floating featured cover ── */}
-      <section className="relative pt-36 pb-10 lg:pt-44 lg:pb-16 overflow-hidden" style={{ backgroundColor: "#F8F6F1" }}>
+      {/* ── Hero — cycling book cover on dark navy ── */}
+      <section className="relative pt-36 pb-10 lg:pt-44 lg:pb-16 overflow-hidden" style={{ backgroundColor: "#0d1a4a" }}>
         {/* Giant background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <span
-            className="font-display font-black text-ink whitespace-nowrap uppercase leading-none"
-            style={{ fontSize: "clamp(5rem, 20vw, 18rem)", opacity: 0.045 }}
+            className="font-display font-black whitespace-nowrap uppercase leading-none"
+            style={{ fontSize: "clamp(5rem, 20vw, 18rem)", opacity: 0.06, color: "#fff" }}
           >
-            New Release
+            Books
           </span>
         </div>
+
+        {/* Subtle bottom fade into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, rgba(13,26,74,0.6))" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-12">
 
             {/* Left — credential block */}
             <Animate variant="slideRight" className="text-left">
-              <p className="font-body text-xs tracking-[0.22em] uppercase text-stone mb-2">Latest Release</p>
+              <p className="font-body text-xs tracking-[0.22em] uppercase mb-2" style={{ color: "#4EC5BF" }}>
+                The Collection
+              </p>
               <p
-                className="font-display font-black uppercase leading-tight text-ink"
+                className="font-display font-black uppercase leading-tight text-white"
                 style={{ fontSize: "clamp(1.4rem, 3vw, 2.4rem)" }}
               >
                 Prophetic<br />
                 <span style={{ color: "#4EC5BF" }}>Author</span>
               </p>
-              <p className="font-body text-sm text-stone mt-3 max-w-[180px] leading-relaxed">
+              <p className="font-body text-sm mt-3 max-w-[180px] leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
                 Pastor · Theologian · Strategic Educator
               </p>
-            </Animate>
 
-            {/* Centre — floating book cover */}
-            <Animate variant="scaleUp" delay={0.15} className="flex flex-col items-center">
-              <Link href={`/books/${featured.slug}`}>
-                <div
-                  className="relative w-[160px] sm:w-[220px] lg:w-[260px] aspect-[2/3] cursor-pointer transition-transform duration-500 hover:-translate-y-2"
-                  style={{ filter: "drop-shadow(0 32px 64px rgba(11,20,64,0.22))" }}
-                >
-                  <Image
-                    src={featured.coverImage}
-                    alt={`Cover of ${featured.title}`}
-                    fill
-                    className="object-contain"
-                    priority
-                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 220px, 260px"
+              {/* Dot indicators */}
+              <div className="flex gap-2 mt-6">
+                {books.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setHeroIndex(i)}
+                    className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                    style={{ backgroundColor: i === heroIndex ? "#4EC5BF" : "rgba(255,255,255,0.25)", transform: i === heroIndex ? "scale(1.4)" : "scale(1)" }}
+                    aria-label={`Show book ${i + 1}`}
                   />
-                </div>
-              </Link>
+                ))}
+              </div>
             </Animate>
 
-            {/* Right — title + description + CTA */}
-            <Animate variant="slideLeft" delay={0.1} className="text-right">
-              <p
-                className="font-display italic text-ink leading-tight mb-3"
-                style={{ fontSize: "clamp(1rem, 2vw, 1.4rem)" }}
+            {/* Centre — auto-cycling book cover */}
+            <div className="flex flex-col items-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={heroBook.slug}
+                  initial={{ opacity: 0, y: 16, scale: 0.94 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -16, scale: 0.94 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link href={`/books/${heroBook.slug}`}>
+                    <div
+                      className="relative w-[160px] sm:w-[220px] lg:w-[260px] aspect-[2/3] cursor-pointer transition-transform duration-500 hover:-translate-y-2"
+                      style={{ filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.45))" }}
+                    >
+                      <Image
+                        src={heroBook.coverImage}
+                        alt={`Cover of ${heroBook.title}`}
+                        fill
+                        className="object-contain"
+                        priority
+                        sizes="(max-width: 640px) 160px, (max-width: 1024px) 220px, 260px"
+                      />
+                    </div>
+                  </Link>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right — animated book title + description + CTA */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={heroBook.slug + "-text"}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className="text-right"
               >
-                Rev. Acheampong<br />E.S. Builderman
-              </p>
-              <p className="font-body text-sm text-stone leading-relaxed mb-5 max-w-[200px] ml-auto">
-                {featured.description}
-              </p>
-              <Link
-                href={`/books/${featured.slug}`}
-                className="inline-flex items-center px-5 py-2.5 rounded-full font-body text-xs font-semibold tracking-wide transition-all"
-                style={{ backgroundColor: "#4EC5BF", color: "#0B1440" }}
-              >
-                Know More
-              </Link>
-            </Animate>
+                <p className="font-body text-xs tracking-[0.2em] uppercase mb-2" style={{ color: "#4EC5BF" }}>
+                  {heroBook.genre} · {heroBook.year}
+                </p>
+                <p
+                  className="font-display font-black text-white leading-tight mb-3"
+                  style={{ fontSize: "clamp(1rem, 2vw, 1.5rem)" }}
+                >
+                  {heroBook.title}
+                </p>
+                <p className="font-body text-sm leading-relaxed mb-5 max-w-[200px] ml-auto" style={{ color: "rgba(255,255,255,0.55)" }}>
+                  {heroBook.description}
+                </p>
+                <Link
+                  href={`/books/${heroBook.slug}`}
+                  className="inline-flex items-center px-5 py-2.5 rounded-full font-body text-xs font-semibold tracking-wide transition-all"
+                  style={{ backgroundColor: "#4EC5BF", color: "#0B1440" }}
+                >
+                  Know More
+                </Link>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
