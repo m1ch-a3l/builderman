@@ -9,7 +9,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import CartDrawer from "@/components/CartDrawer";
 
 const navLinks = [
-  { href: "/books", label: "Books" },
   { href: "/store", label: "Store" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
