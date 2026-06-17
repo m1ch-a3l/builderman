@@ -184,7 +184,7 @@ function BookListing({ initial }: { initial: BookItem }) {
                     }}
                   >
                     <div className="relative w-9 aspect-[2/3] shrink-0">
-                      <Image src={book.coverImage} alt={book.title} fill className="object-cover object-center" sizes="36px" />
+                      <Image src={book.coverImage} alt={book.title} fill className="object-contain" sizes="36px" />
                     </div>
                     <p className="font-body text-xs leading-snug text-ink line-clamp-2">{book.title}</p>
                   </button>
@@ -272,7 +272,7 @@ export default function Home() {
                         src={book.coverImage}
                         alt={title}
                         fill
-                        className="object-cover object-center"
+                        className="object-contain drop-shadow-xl"
                         sizes="120px"
                       />
                     </div>

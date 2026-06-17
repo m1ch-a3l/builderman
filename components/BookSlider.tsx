@@ -158,16 +158,16 @@ export default function BookSlider({
               className="group flex flex-col gap-3 shrink-0 w-28 text-left"
             >
               <div
-                className={`relative aspect-[2/3] overflow-hidden bg-sage/30 transition-opacity ${
+                className={`relative aspect-[2/3] transition-opacity ${
                   i === index ? "" : "opacity-50 group-hover:opacity-80"
                 }`}
-                style={i === index ? { boxShadow: "0 0 0 2px #2D5016" } : undefined}
+                style={i === index ? { filter: "drop-shadow(0 0 0 3px #4EC5BF)" } : undefined}
               >
                 <Image
                   src={b.coverImage}
                   alt={`Cover of ${b.title}`}
                   fill
-                  className="object-cover object-right"
+                  className="object-contain"
                   sizes="112px"
                 />
               </div>
