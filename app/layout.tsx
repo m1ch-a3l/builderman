@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     description: "Prophetic truth. Pastoral clarity. Transformational leadership.",
     type: "website",
   },
+  icons: {
+    icon: "/favicon/Buildeman_Favicon.png",
+    shortcut: "/favicon/Buildeman_Favicon.png",
+    apple: "/favicon/Buildeman_Favicon.png",
+  },
 };
 
 export default function RootLayout({
