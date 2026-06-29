@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Heart, ChevronDown, ChevronUp, Search } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, Heart, ChevronDown, ChevronUp, Search, ShoppingBag, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { books, bookBundle, bundleTotalPrice, bundleSavings } from "@/lib/data";
@@ -31,6 +32,72 @@ function AddToCartButton({ book }: { book: Book }) {
     >
       {added ? <span className="flex items-center justify-center gap-1.5"><Check size={11} strokeWidth={2.5} />Added!</span> : "Add to Cart"}
     </button>
+  );
+}
+
+/* ── Bundle Add to Cart — premium CTA ── */
+function BundleAddToCartButton({ book }: { book: Book }) {
+  const { add } = useCart();
+  const [added, setAdded] = useState(false);
+
+  function handleAdd() {
+    add(book);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2200);
+  }
+
+  return (
+    <motion.button
+      onClick={handleAdd}
+      whileHover={{ scale: 1.035 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 22 }}
+      className="relative overflow-hidden flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-body font-bold text-sm tracking-wide whitespace-nowrap"
+      style={{
+        backgroundColor: added ? "#0B1440" : "#4EC5BF",
+        color: added ? "#4EC5BF" : "#0B1440",
+        boxShadow: added ? "0 6px 20px rgba(11,20,64,0.35)" : "0 6px 20px rgba(78,197,191,0.45)",
+      }}
+    >
+      {/* Shimmer sweep */}
+      {!added && (
+        <motion.span
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%)" }}
+          initial={{ x: "-120%" }}
+          animate={{ x: "120%" }}
+          transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}
+        />
+      )}
+
+      <AnimatePresence mode="wait" initial={false}>
+        {added ? (
+          <motion.span
+            key="added"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.25 }}
+            className="relative z-10 flex items-center gap-2"
+          >
+            <Sparkles size={15} strokeWidth={2.4} />
+            Added — Enjoy the Collection!
+          </motion.span>
+        ) : (
+          <motion.span
+            key="idle"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.25 }}
+            className="relative z-10 flex items-center gap-2"
+          >
+            <ShoppingBag size={15} strokeWidth={2.4} />
+            Get the Complete Collection
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
   );
 }
 
@@ -242,7 +309,7 @@ export default function StorePage() {
                   ${bundleTotalPrice.toFixed(2)}
                 </p>
               </div>
-              <AddToCartButton book={bookBundle} />
+              <BundleAddToCartButton book={bookBundle} />
             </div>
           </div>
         </section>
