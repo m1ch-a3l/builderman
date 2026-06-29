@@ -77,6 +77,23 @@ export const books: Book[] = [
   },
 ];
 
+export const bundlePrice = 99.99;
+export const bundleTotalPrice = books.reduce((sum, b) => sum + (b.price ?? 0), 0);
+export const bundleSavings = bundleTotalPrice - bundlePrice;
+
+export const bookBundle: Book = {
+  id: "bundle",
+  slug: "complete-collection",
+  title: "The Complete Collection",
+  year: 2026,
+  genre: "All 6 Books",
+  description: "All six books — theology, leadership, and devotional writing — in one bundle.",
+  longDescription:
+    "Every book Rev. Builderman has written, bundled together at a special price: Africa Beware, Charismatic Hoax, The Ministry of Writing, Oversalting the Earth, Size Steps, and Thanksgiving Manifesto. A complete library of prophetic, pastoral, and purpose-driven writing for leaders across Africa and beyond.",
+  coverImage: "/books/africa-beware-hc.png",
+  price: bundlePrice,
+};
+
 export const events: Event[] = [
   {
     id: "1",

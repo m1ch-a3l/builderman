@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Check, Heart, ChevronDown, ChevronUp, Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { books } from "@/lib/data";
+import { books, bookBundle, bundleTotalPrice, bundleSavings } from "@/lib/data";
 import type { Book } from "@/lib/types";
 import { useCart } from "@/lib/cart-context";
 
@@ -186,6 +186,63 @@ export default function StorePage() {
                   sizes="160px"
                 />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Bundle promo ── */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 mt-10">
+          <div
+            className="rounded-3xl px-6 sm:px-10 py-8 sm:py-10 flex flex-col sm:flex-row items-center gap-8"
+            style={{ backgroundColor: "#fff", border: "1px solid #E8E4DC", boxShadow: "0 4px 24px rgba(11,20,64,0.06)" }}
+          >
+            {/* Fanned covers */}
+            <div className="relative shrink-0 flex items-center" style={{ width: 170, height: 140 }}>
+              {books.map((book, i) => (
+                <div
+                  key={book.slug}
+                  className="absolute rounded-md overflow-hidden shadow-md"
+                  style={{
+                    width: 64,
+                    aspectRatio: "2/3",
+                    left: i * 18,
+                    transform: `rotate(${(i - 2.5) * 6}deg)`,
+                    zIndex: i,
+                    boxShadow: "0 6px 14px rgba(11,20,64,0.18)",
+                  }}
+                >
+                  <Image src={book.coverImage} alt={book.title} fill className="object-cover" sizes="64px" />
+                </div>
+              ))}
+            </div>
+
+            {/* Copy */}
+            <div className="flex-1 text-center sm:text-left">
+              <span
+                className="inline-block text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 rounded-full font-body font-medium mb-2"
+                style={{ backgroundColor: "rgba(78,197,191,0.15)", color: "#0B1440" }}
+              >
+                Best Value
+              </span>
+              <h2 className="font-display font-bold text-xl sm:text-2xl mb-1" style={{ color: "#1A1A1A" }}>
+                The Complete Collection
+              </h2>
+              <p className="font-body text-sm" style={{ color: "#8C7B6B" }}>
+                All six books, bundled together — save ${bundleSavings.toFixed(2)} versus buying individually.
+              </p>
+            </div>
+
+            {/* Price + CTA */}
+            <div className="flex flex-col items-center gap-3 shrink-0">
+              <div className="text-center">
+                <p className="font-display font-bold text-2xl" style={{ color: "#1A1A1A" }}>
+                  ${bookBundle.price?.toFixed(2)}
+                </p>
+                <p className="font-body text-xs line-through" style={{ color: "#8C7B6B" }}>
+                  ${bundleTotalPrice.toFixed(2)}
+                </p>
+              </div>
+              <AddToCartButton book={bookBundle} />
             </div>
           </div>
         </section>
