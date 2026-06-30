@@ -11,7 +11,7 @@ export const books: Book[] = [
     longDescription:
       "Africa Beware is a rigorous historical reckoning and a prophetic call to arise. Drawing on theology, African history, and cultural analysis, Rev. Builderman exposes the cycles of oppression that have kept a continent from its God-given destiny — and sounds a clarion call for reclaiming humanity, identity, and divine purpose.",
     coverImage: "/books/africa-beware-hc.png",
-    price: 24.99,
+    price: 19.99,
   },
   {
     id: "2",
@@ -23,7 +23,7 @@ export const books: Book[] = [
     longDescription:
       "Charismatic Hoax is a bold defence of the Spirit — not a rejection of the gifts, but a fearless exposé of how spiritual truth can be distorted. It confronts a culture where appearance overshadows authenticity, where signs replace substance, and where dependence on men can quietly take the place of devotion to Christ. An invitation to rediscover what is true.",
     coverImage: "/books/charismatic-hoax-hc.png",
-    price: 22.99,
+    price: 19.99,
   },
   {
     id: "3",
@@ -73,7 +73,7 @@ export const books: Book[] = [
       "In an age overshadowed by anxiety, entitlement, and spiritual forgetfulness, Rev. Builderman sounds a clarion call to return to the ancient Christian posture of gratitude — not as an occasional act, but as a defining identity. Thanksgiving is less a feeling and more a framework; less a reaction and more a revelation. Less an optional virtue and more a way of seeing God in all things.",
     coverImage: "/books/thanksgiving-manifesto-hc.png",
     debut: true,
-    price: 17.99,
+    price: 19.99,
   },
 ];
 
