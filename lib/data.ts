@@ -11,7 +11,6 @@ export const books: Book[] = [
     longDescription:
       "Africa Beware is a rigorous historical reckoning and a prophetic call to arise. Drawing on theology, African history, and cultural analysis, Rev. Builderman exposes the cycles of oppression that have kept a continent from its God-given destiny — and sounds a clarion call for reclaiming humanity, identity, and divine purpose.",
     coverImage: "/books/africa-beware-hc.png",
-    featured: true,
     price: 24.99,
   },
   {
@@ -36,6 +35,7 @@ export const books: Book[] = [
     longDescription:
       "In the beginning, God spoke. Then He commanded that His words be written down. Drawing from the breadth of Scripture and the wisdom of Augustine, Aquinas, Calvin, Luther, and Sayers, Rev. Builderman traces the theology of the written word from Genesis to the digital age — examining why biblical writers risked everything to record what God had spoken, and what it means to take up the pen today as an act of obedient love.",
     coverImage: "/books/the-ministry-of-writing-hc.png",
+    featured: true,
     price: 19.99,
   },
   {
