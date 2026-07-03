@@ -246,11 +246,19 @@ export default function BooksGrid() {
                 className="font-display font-black text-ink uppercase leading-tight mb-6"
                 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}
               >
-                Rev. Builderman: Stories of Faith, Leadership, and Africa
+                Acheampong E.S. Builderman
               </h2>
-              <p className="font-body text-base text-stone leading-relaxed mb-8 max-w-prose">
-                Rev. Acheampong E.S. Builderman is a pastor, author, and transformational educator whose six books span theology, leadership, cultural commentary, and devotional writing. His work has impacted church leaders, students, and executives across Africa and the world.
-              </p>
+              <div className="font-body text-base text-stone leading-relaxed mb-8 max-w-prose space-y-4">
+                <p>
+                  Acheampong E. S. Builderman is a thinker and a New Testament prophet whose strategic leadership, management consulting, and transformational teaching have shaped institutions, communities, and emerging leaders for over fifteen years across executive leadership, business development, and nationwide capacity-building.
+                </p>
+                <p>
+                  He holds an MBA from Anglia Ruskin University, advanced certifications in management consulting (Emory University) and innovation management (Rotterdam School of Management — Erasmus University), and UK postgraduate diplomas at Levels 7 and 8 in strategic management and leadership. He is completing a Doctor of Business Administration degree at Walsh College and researching artificial intelligence and machine learning.
+                </p>
+                <p>
+                  A prolific writer, he has completed twenty-two manuscripts since 2018, seven of which have been published and are already in circulation. He is the Missions Director and Lead Pastor of The Thanksgiving Place Chapel and Ministries Incorporated and lives in Accra, Ghana with his beloved wife and their children.
+                </p>
+              </div>
               <Link
                 href="/about"
                 className="inline-flex items-center px-6 py-2.5 rounded-full font-body text-xs font-semibold tracking-wide border border-ink/30 text-ink hover:border-teal hover:text-teal transition-all"
@@ -261,14 +269,16 @@ export default function BooksGrid() {
 
             <Animate variant="slideLeft" delay={0.1}>
               <div
-                className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl"
+                className="relative w-full overflow-hidden rounded-2xl"
                 style={{ boxShadow: "0 24px 60px rgba(11,20,64,0.15)" }}
               >
                 <Image
-                  src="/author.png"
+                  src="/Author.webp"
                   alt="Rev. Acheampong E.S. Builderman"
-                  fill
-                  className="object-cover object-top"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                  style={{ display: "block" }}
                   sizes="(max-width: 1024px) 90vw, 50vw"
                 />
               </div>
