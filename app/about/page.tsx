@@ -21,7 +21,7 @@ export default function AboutPage() {
           style={{ backgroundColor: "#0d1a4a", minHeight: 320 }}
         >
           {/* Author photo — right side, full height, fades left */}
-          <div className="absolute inset-y-0 right-0 w-[45%] hidden lg:block">
+          <div className="absolute top-8 bottom-0 right-0 w-[45%] hidden lg:block">
             <Image
               src="/Author.webp"
               alt="Rev. Acheampong E.S. Builderman"
