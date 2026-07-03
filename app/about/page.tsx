@@ -20,29 +20,7 @@ export default function AboutPage() {
           className="mx-4 lg:mx-8 mt-4 rounded-3xl overflow-hidden relative"
           style={{ backgroundColor: "#0d1a4a", minHeight: 320 }}
         >
-          {/* Author photo — right side, full height, fades left */}
-          <div className="absolute top-8 bottom-0 right-0 w-[45%] hidden lg:block">
-            <Image
-              src="/Author.webp"
-              alt="Rev. Acheampong E.S. Builderman"
-              fill
-              className="object-cover object-top"
-              sizes="45vw"
-              priority
-            />
-            {/* Gradient fade left into navy */}
-            <div
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(to right, #0d1a4a 0%, #0d1a4a 10%, transparent 55%)" }}
-            />
-            {/* Subtle bottom fade */}
-            <div
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(to top, #0d1a4a 0%, transparent 30%)" }}
-            />
-          </div>
-
-          <div className="relative max-w-7xl mx-auto px-8 lg:px-14 py-14 lg:py-16">
+          <div className="max-w-7xl mx-auto px-8 lg:px-14 py-14 lg:py-16">
             <div className="max-w-lg">
               <p
                 className="font-body text-xs tracking-[0.22em] uppercase mb-3"
@@ -71,24 +49,25 @@ export default function AboutPage() {
 
         {/* ── Main bio section ── */}
         <section className="bg-cream py-24">
-          <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center gap-14">
-            {/* Centered photo */}
-            <div className="flex flex-col items-center gap-8 w-full">
-              <div className="relative w-full max-w-[520px] rounded-2xl overflow-hidden shadow-lg mx-auto" style={{ aspectRatio: "auto" }}>
+          <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-start">
+
+            {/* Left — photo + chips */}
+            <div className="flex flex-col items-center lg:items-start gap-8 lg:sticky lg:top-24">
+              <div className="relative w-full max-w-[420px] rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: "auto" }}>
                 <Image
                   src="/Author.webp"
                   alt="Rev. Acheampong E.S. Builderman"
-                  width={520}
-                  height={720}
+                  width={420}
+                  height={580}
                   className="w-full h-auto object-contain"
                   style={{ display: "block" }}
                 />
               </div>
 
               {/* Info chips */}
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap gap-3">
                 {[
-                  { icon: BookOpen, text: "6 books published" },
+                  { icon: BookOpen, text: "7 books published" },
                   { icon: Globe,    text: "15+ years of transformational ministry" },
                   { icon: MapPin,   text: "Based in Accra, Ghana" },
                 ].map(({ icon: Icon, text }) => (
@@ -100,8 +79,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Bio text */}
-            <div className="w-full space-y-8">
+            {/* Right — Bio text */}
+            <div className="space-y-8">
               <blockquote className="font-display text-2xl lg:text-3xl italic text-ink leading-tight border-l-2 border-forest pl-6">
                 &ldquo;Writing is not merely a vocation — it is a sacred duty
                 to speak truth where silence would be easier.&rdquo;
