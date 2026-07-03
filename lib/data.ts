@@ -52,14 +52,26 @@ export const books: Book[] = [
   },
   {
     id: "5",
-    slug: "size-steps",
-    title: "Size Steps",
+    slug: "size-steps-volume-1",
+    title: "Size Steps — Volume 1",
     year: 2026,
     genre: "Christian Leadership",
     description: "The beauty of growth in every measure of life.",
     longDescription:
       "A prophetic call to a generation that has forgotten how to grow. Drawing from the depths of Scripture, the wisdom of history's greatest Christian voices, and the vibrant faith of the African church, Size Steps reveals a transformative truth: every stage of life, no matter how small or hidden, carries God's prophetic DNA. Greatness is not found in skipping steps but in embracing them.",
-    coverImage: "/books/size-steps-hc.png",
+    coverImage: "/books/size-steps-vol1-hc.png",
+    price: 19.99,
+  },
+  {
+    id: "7",
+    slug: "size-steps-volume-2",
+    title: "Size Steps — Volume 2",
+    year: 2026,
+    genre: "Christian Leadership",
+    description: "Continuing the journey of growth through every season of life.",
+    longDescription:
+      "The second volume in the Size Steps series deepens the prophetic summons to embrace every God-appointed season. Where Volume 1 laid the foundation, Volume 2 builds upward — exploring the disciplines, the trials, and the quiet breakthroughs that shape a life of lasting significance. For every leader who knows there is more, and is willing to take the next step.",
+    coverImage: "/books/size-steps-vol2-hc.png",
     price: 19.99,
   },
   {
@@ -86,10 +98,10 @@ export const bookBundle: Book = {
   slug: "complete-collection",
   title: "The Complete Collection",
   year: 2026,
-  genre: "All 6 Books",
-  description: "All six books — theology, leadership, and devotional writing — in one bundle.",
+  genre: "All 7 Books",
+  description: "All seven books — theology, leadership, and devotional writing — in one bundle.",
   longDescription:
-    "Every book Rev. Builderman has written, bundled together at a special price: Africa Beware, Charismatic Hoax, The Ministry of Writing, Oversalting the Earth, Size Steps, and Thanksgiving Manifesto. A complete library of prophetic, pastoral, and purpose-driven writing for leaders across Africa and beyond.",
+    "Every book Rev. Builderman has written, bundled together at a special price: Africa Beware, Charismatic Hoax, The Ministry of Writing, Oversalting the Earth, Size Steps Volume 1, Size Steps Volume 2, and Thanksgiving Manifesto. A complete library of prophetic, pastoral, and purpose-driven writing for leaders across Africa and beyond.",
   coverImage: "/books/africa-beware-hc.png",
   price: bundlePrice,
 };
