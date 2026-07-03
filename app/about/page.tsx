@@ -55,7 +55,7 @@ export default function AboutPage() {
             <div className="flex flex-col items-center lg:items-start gap-8 lg:sticky lg:top-24">
               <div className="relative w-full max-w-[420px] rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: "auto" }}>
                 <Image
-                  src="/Author.webp"
+                  src="/author.png"
                   alt="Rev. Acheampong E.S. Builderman"
                   width={420}
                   height={580}

@@ -273,7 +273,7 @@ export default function BooksGrid() {
                 style={{ boxShadow: "0 24px 60px rgba(11,20,64,0.15)" }}
               >
                 <Image
-                  src="/Author.webp"
+                  src="/author.png"
                   alt="Rev. Acheampong E.S. Builderman"
                   width={600}
                   height={800}
