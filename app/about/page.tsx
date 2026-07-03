@@ -52,12 +52,12 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center gap-14">
             {/* Centered photo */}
             <div className="flex flex-col items-center gap-8 w-full">
-              <div className="relative w-full max-w-[340px] rounded-2xl overflow-hidden shadow-lg mx-auto" style={{ aspectRatio: "auto" }}>
+              <div className="relative w-full max-w-[520px] rounded-2xl overflow-hidden shadow-lg mx-auto" style={{ aspectRatio: "auto" }}>
                 <Image
                   src="/Author.webp"
                   alt="Rev. Acheampong E.S. Builderman"
-                  width={340}
-                  height={500}
+                  width={520}
+                  height={720}
                   className="w-full h-auto object-contain"
                   style={{ display: "block" }}
                 />
