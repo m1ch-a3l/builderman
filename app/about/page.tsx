@@ -18,9 +18,31 @@ export default function AboutPage() {
         {/* ── Banner hero ── */}
         <section
           className="mx-4 lg:mx-8 mt-4 rounded-3xl overflow-hidden relative"
-          style={{ backgroundColor: "#0d1a4a", minHeight: 220 }}
+          style={{ backgroundColor: "#0d1a4a", minHeight: 320 }}
         >
-          <div className="max-w-7xl mx-auto px-8 lg:px-14 py-12 flex items-center justify-between gap-8">
+          {/* Author photo — right side, full height, fades left */}
+          <div className="absolute inset-y-0 right-0 w-[45%] hidden lg:block">
+            <Image
+              src="/Author.webp"
+              alt="Rev. Acheampong E.S. Builderman"
+              fill
+              className="object-cover object-top"
+              sizes="45vw"
+              priority
+            />
+            {/* Gradient fade left into navy */}
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to right, #0d1a4a 0%, #0d1a4a 10%, transparent 55%)" }}
+            />
+            {/* Subtle bottom fade */}
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to top, #0d1a4a 0%, transparent 30%)" }}
+            />
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-8 lg:px-14 py-14 lg:py-16">
             <div className="max-w-lg">
               <p
                 className="font-body text-xs tracking-[0.22em] uppercase mb-3"
