@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { BookOpen, Globe, MapPin, Phone, Mail } from "lucide-react";
+import { BookOpen, Globe, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -65,13 +65,13 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center gap-14">
             {/* Centered photo */}
             <div className="flex flex-col items-center gap-8 w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg" style={{ width: 240, height: 320 }}>
+              <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg mx-auto">
                 <Image
                   src="/author.png"
                   alt="Rev. Acheampong E.S. Builderman"
                   fill
                   className="object-cover object-top"
-                  sizes="240px"
+                  sizes="340px"
                 />
               </div>
 
@@ -81,8 +81,6 @@ export default function AboutPage() {
                   { icon: BookOpen, text: "6 books published" },
                   { icon: Globe,    text: "15+ years of transformational ministry" },
                   { icon: MapPin,   text: "Based in Accra, Ghana" },
-                  { icon: Phone,    text: "054 377 1181" },
-                  { icon: Mail,     text: "info@mwpr.org" },
                 ].map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-2.5 bg-white border border-stone/15 px-4 py-2.5 rounded-full">
                     <Icon size={13} className="text-forest shrink-0" />
