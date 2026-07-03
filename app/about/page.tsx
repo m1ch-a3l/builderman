@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { BookOpen, Award, Globe, MapPin } from "lucide-react";
+import { BookOpen, Globe, MapPin, Phone, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import InkDivider from "@/components/InkDivider";
 
 export const metadata: Metadata = {
   title: "About — Rev. Acheampong E.S. Builderman",
@@ -11,35 +10,44 @@ export const metadata: Metadata = {
     "Biography of Rev. Acheampong E.S. Builderman — pastor, author, strategic leader, and transformational educator.",
 };
 
-const credentials = [
-  { year: "In progress", title: "Doctor of Business Administration (AI & Machine Learning) — Walsh College, USA" },
-  { year: "Certified", title: "Rotterdam School of Management, Netherlands" },
-  { year: "Certified", title: "Emory University, USA" },
-  { year: "Certified", title: "Anglia Ruskin University, UK" },
-  { year: "15+ yrs", title: "Lead Pastor — Thanksgiving Place Chapel & Ministries Inc., Accra, Ghana" },
-  { year: "Mentored", title: "Will Graham, R.T. Kendall & Chip Ingram" },
-];
-
 export default function AboutPage() {
   return (
     <>
       <Navbar />
       <main className="bg-parchment pt-16">
         {/* ── Banner hero ── */}
-        <section className="mx-4 lg:mx-8 mt-4 rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#0d1a4a", minHeight: 220 }}>
+        <section
+          className="mx-4 lg:mx-8 mt-4 rounded-3xl overflow-hidden relative"
+          style={{ backgroundColor: "#0d1a4a", minHeight: 220 }}
+        >
           <div className="max-w-7xl mx-auto px-8 lg:px-14 py-12 flex items-center justify-between gap-8">
             <div className="max-w-lg">
-              <p className="font-body text-xs tracking-[0.22em] uppercase mb-3" style={{ color: "#4EC5BF" }}>
+              <p
+                className="font-body text-xs tracking-[0.22em] uppercase mb-3"
+                style={{ color: "#4EC5BF" }}
+              >
                 Pastor · Author · Strategic Educator
               </p>
-              <h1 className="font-display font-black text-white leading-tight mb-3" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)" }}>
-                About Rev. Acheampong<br />E.S. Builderman
+              <h1
+                className="font-display font-black text-white leading-tight mb-3"
+                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)" }}
+              >
+                About Rev. Acheampong
+                <br />
+                E.S. Builderman
               </h1>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-                Transformational educator, pastor, and author empowering leaders across Africa and beyond for over fifteen years.
+              <p
+                className="font-body text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.55)" }}
+              >
+                Thinker, New Testament prophet, pastor, and author empowering
+                leaders across Africa and beyond for over fifteen years.
               </p>
             </div>
-            <div className="hidden lg:block relative shrink-0 rounded-2xl overflow-hidden" style={{ width: 140, height: 186 }}>
+            <div
+              className="hidden lg:block relative shrink-0 rounded-2xl overflow-hidden"
+              style={{ width: 140, height: 186 }}
+            >
               <Image
                 src="/author.png"
                 alt="Rev. Acheampong E.S. Builderman"
@@ -52,107 +60,72 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Main bio section */}
+        {/* ── Main bio section ── */}
         <section className="bg-cream py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
-            {/* Photo */}
-            <div className="sticky top-24">
-              <div className="relative aspect-[3/4] w-full max-w-[340px]">
+          <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col items-center gap-14">
+            {/* Centered photo */}
+            <div className="flex flex-col items-center gap-8 w-full">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg" style={{ width: 240, height: 320 }}>
                 <Image
                   src="/author.png"
                   alt="Rev. Acheampong E.S. Builderman"
                   fill
                   className="object-cover object-top"
-                  sizes="340px"
+                  sizes="240px"
                 />
               </div>
-              <div className="mt-6 flex flex-col gap-3">
+
+              {/* Info chips */}
+              <div className="flex flex-wrap justify-center gap-4">
                 {[
                   { icon: BookOpen, text: "6 books published" },
-                  { icon: Award, text: "DBA candidate — AI & Machine Learning" },
-                  { icon: Globe, text: "15+ years of transformational ministry" },
-                  { icon: MapPin, text: "Based in Accra, Ghana" },
+                  { icon: Globe,    text: "15+ years of transformational ministry" },
+                  { icon: MapPin,   text: "Based in Accra, Ghana" },
+                  { icon: Phone,    text: "054 377 1181" },
+                  { icon: Mail,     text: "info@mwpr.org" },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-3">
-                    <div className="w-7 h-7 flex items-center justify-center border border-forest/30 shrink-0">
-                      <Icon size={13} className="text-forest" />
-                    </div>
-                    <span className="text-ink text-sm">{text}</span>
+                  <div key={text} className="flex items-center gap-2.5 bg-white border border-stone/15 px-4 py-2.5 rounded-full">
+                    <Icon size={13} className="text-forest shrink-0" />
+                    <span className="text-ink text-sm font-body">{text}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Bio text */}
-            <div className="space-y-8">
-              <blockquote className="font-display text-3xl italic text-ink leading-tight border-l-2 border-forest pl-6">
+            <div className="w-full space-y-8">
+              <blockquote className="font-display text-2xl lg:text-3xl italic text-ink leading-tight border-l-2 border-forest pl-6">
                 &ldquo;Writing is not merely a vocation — it is a sacred duty
                 to speak truth where silence would be easier.&rdquo;
               </blockquote>
 
               <div className="space-y-5 text-stone leading-relaxed text-base">
                 <p>
-                  Acheampong E. S. Builderman is a pastor, author, strategic
-                  leader, and transformational educator whose work has influenced
-                  institutions and empowered emerging leaders across Africa and
-                  beyond for over fifteen years.
+                  Acheampong E. S. Builderman is a thinker and a New Testament
+                  prophet whose strategic leadership, management consulting, and
+                  transformational teaching have shaped institutions, communities,
+                  and emerging leaders for over fifteen years across executive
+                  leadership, business development, and nationwide
+                  capacity-building.
                 </p>
                 <p>
-                  With experience in management strategy, development consulting,
-                  C-suite leadership advisory, and public-sector policy, he holds
-                  postgraduate degrees and professional certifications from Anglia
-                  Ruskin University (UK), Emory University (USA), and Rotterdam
-                  School of Management (Netherlands). He is currently completing a
-                  Doctor of Business Administration in AI and Machine Learning at
-                  Walsh College, USA.
+                  He holds an MBA from Anglia Ruskin University, advanced
+                  certifications in management consulting (Emory University) and
+                  innovation management (Rotterdam School of Management — Erasmus
+                  University), and UK postgraduate diplomas at Levels 7 and 8 in
+                  strategic management and leadership. He is completing a Doctor of
+                  Business Administration degree at Walsh College and researching
+                  artificial intelligence and machine learning.
                 </p>
                 <p>
-                  In ministry, he has received mentorship and practical training
-                  from globally renowned institutions and teachers of the Word,
-                  notably Will Graham, R.T. Kendall, and Chip Ingram. He has
-                  travelled extensively and attended several leadership and
-                  ministry-focused conferences to enhance his capacity to serve
-                  effectively.
-                </p>
-                <p>
-                  He currently serves as a Volunteer Lead Pastor at The
-                  Thanksgiving Place Chapel and Ministries Incorporated in Accra,
-                  Ghana — where his preaching, teaching, and writing converge to
-                  form and equip a generation that will reshape the spiritual and
-                  social fabric of Africa.
-                </p>
-                <p>
-                  His six books span Christian living, theology, leadership,
-                  devotional life, and African social commentary — each one a
-                  prophetic summons to a generation that needs to hear truth
-                  spoken clearly and with love.
+                  A prolific writer, he has completed twenty-two manuscripts since
+                  2018, six of which have been published and are already in
+                  circulation. He is the Missions Director and Lead Pastor of The
+                  Thanksgiving Place Chapel and Ministries Incorporated and lives
+                  in Accra, Ghana with his beloved wife and their children.
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <InkDivider />
-
-        {/* Credentials */}
-        <section className="bg-parchment py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h2 className="font-display text-4xl font-bold text-ink mb-12">
-              Education &amp; Ministry
-            </h2>
-            <ol className="flex flex-col divide-y divide-stone/15">
-              {credentials.map((c) => (
-                <li
-                  key={c.title}
-                  className="grid grid-cols-[100px_1fr] gap-8 py-6 items-start"
-                >
-                  <span className="font-display text-sm font-semibold text-forest leading-snug">
-                    {c.year}
-                  </span>
-                  <span className="text-ink text-base">{c.title}</span>
-                </li>
-              ))}
-            </ol>
           </div>
         </section>
       </main>
