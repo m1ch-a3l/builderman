@@ -22,7 +22,7 @@ const audiences = [
   {
     title: "Students & Youth",
     desc: "Equipping the next generation with prophetic truth and purposeful identity.",
-    book: books.find(b => b.slug === "size-steps")!,
+    book: books.find(b => b.slug === "size-steps-volume-1")!,
   },
   {
     title: "Church Leaders",
