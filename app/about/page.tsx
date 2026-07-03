@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { BookOpen, Globe, MapPin } from "lucide-react";
+import { BookOpen, FileText, Globe, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -68,6 +68,7 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-3">
                 {[
                   { icon: BookOpen, text: "7 books published" },
+                  { icon: FileText, text: "22 manuscripts completed" },
                   { icon: Globe,    text: "15+ years of transformational ministry" },
                   { icon: MapPin,   text: "Based in Accra, Ghana" },
                 ].map(({ icon: Icon, text }) => (
