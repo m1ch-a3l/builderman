@@ -248,17 +248,9 @@ export default function BooksGrid() {
               >
                 Acheampong E.S. Builderman
               </h2>
-              <div className="font-body text-base text-stone leading-relaxed mb-8 max-w-prose space-y-4">
-                <p>
-                  Acheampong E. S. Builderman is a thinker and a New Testament prophet whose strategic leadership, management consulting, and transformational teaching have shaped institutions, communities, and emerging leaders for over fifteen years across executive leadership, business development, and nationwide capacity-building.
-                </p>
-                <p>
-                  He holds an MBA from Anglia Ruskin University, advanced certifications in management consulting (Emory University) and innovation management (Rotterdam School of Management — Erasmus University), and UK postgraduate diplomas at Levels 7 and 8 in strategic management and leadership. He is completing a Doctor of Business Administration degree at Walsh College and researching artificial intelligence and machine learning.
-                </p>
-                <p>
-                  A prolific writer, he has completed twenty-two manuscripts since 2018, seven of which have been published and are already in circulation. He is the Missions Director and Lead Pastor of The Thanksgiving Place Chapel and Ministries Incorporated and lives in Accra, Ghana with his beloved wife and their children.
-                </p>
-              </div>
+              <p className="font-body text-base text-stone leading-relaxed mb-8 max-w-prose">
+                A thinker, New Testament prophet, and prolific writer — Rev. Builderman has completed twenty-two manuscripts since 2018, seven published and in circulation. He serves as Missions Director and Lead Pastor of The Thanksgiving Place Chapel and Ministries Incorporated in Accra, Ghana.
+              </p>
               <Link
                 href="/about"
                 className="inline-flex items-center px-6 py-2.5 rounded-full font-body text-xs font-semibold tracking-wide border border-ink/30 text-ink hover:border-teal hover:text-teal transition-all"
