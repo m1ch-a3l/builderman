@@ -59,7 +59,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-3 mb-10">
                 {[
                   { Icon: Mail,    label: "Email Us",         value: "enochbuilderman@gmail.com",    href: "mailto:enochbuilderman@gmail.com" },
-                  { Icon: MapPin,  label: "Our Headquarters", value: "Thanksgiving Place Chapel, Accra, Ghana", href: "#" },
+                  { Icon: MapPin,  label: "Our Headquarters", value: "Thanksgiving Place Chapel, Accra, Ghana", href: "https://thanksgivingplace.org/" },
                 ].map(({ Icon, label, value, href }) => (
                   <a
                     key={label}
