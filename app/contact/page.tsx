@@ -44,7 +44,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
             {/* ── Left col ── */}
-            <div>
+           {/* <div>
               <h1
                 className="font-display font-black leading-[1.05] mb-4"
                 style={{ fontSize: "clamp(3rem, 7vw, 5rem)", color: "#0B1440" }}
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 Don&rsquo;t be afraid to say hello with us!
               </p>
 
-              {/* Contact rows */}
+              {/* Contact rows 
               <div className="flex flex-col gap-3 mb-10">
                 {[
                   { Icon: Mail,    label: "Email Us",         value: "enochbuilderman@gmail.com",    href: "mailto:enochbuilderman@gmail.com" },
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Socials */}
+              {/* Socials 
               <div>
                 <p className="font-body text-[10px] tracking-[0.2em] uppercase mb-4" style={{ color: "rgba(11,20,64,0.4)" }}>
                   Follow us on
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div>*/}
 
             {/* ── Right col — form card ── */}
             <div className="bg-white rounded-3xl p-8 lg:p-10" style={{ boxShadow: "0 8px 40px rgba(11,20,64,0.10)" }}>
