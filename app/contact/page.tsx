@@ -58,8 +58,7 @@ export default function ContactPage() {
               {/* Contact rows */}
               <div className="flex flex-col gap-3 mb-10">
                 {[
-                  { Icon: Mail,    label: "Email Us",         value: "info@mwpr.org",    href: "mailto:info@mwpr.org" },
-                  { Icon: Phone,   label: "Call Us",          value: "054 377 1181",     href: "tel:+233543771181" },
+                  { Icon: Mail,    label: "Email Us",         value: "enochbuilderman@gmail.com",    href: "mailto:enochbuilderman@gmail.com" },
                   { Icon: MapPin,  label: "Our Headquarters", value: "Thanksgiving Place Chapel, Accra, Ghana", href: "#" },
                 ].map(({ Icon, label, value, href }) => (
                   <a
