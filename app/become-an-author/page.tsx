@@ -47,7 +47,7 @@ export default function BecomeAnAuthorPage() {
               className="font-display font-black text-white leading-tight mb-5"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)" }}
             >
-              Become a Published Author
+              Become a Published Author<br />with the Ministry of Writing
             </h1>
             <p className="font-body text-base leading-relaxed max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>
               Are you ready to share your message with the world but find yourself stalled by the writing
@@ -72,24 +72,29 @@ export default function BecomeAnAuthorPage() {
 
         {/* ── Founder note ── */}
         <section className="py-16 lg:py-20" style={{ backgroundColor: "#F8F6F1" }}>
-          <div className="max-w-3xl mx-auto px-6 lg:px-12">
-            <blockquote
-              className="border-l-4 pl-8 py-2"
-              style={{ borderColor: "#4EC5BF" }}
-            >
-              <p className="font-body text-base leading-relaxed text-stone mb-4">
-                Founded by <span className="font-semibold text-ink">Acheampong E. S. Builderman</span> — theologian,
-                management consultant, and prolific writer — author of seven compelling, life-transformational books
+          <div className="max-w-7xl mx-auto px-8 lg:px-14 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-2">
+              <p className="font-body text-xs tracking-[0.22em] uppercase mb-5" style={{ color: "#4EC5BF" }}>
+                About the Founder
+              </p>
+              <p className="font-body text-base lg:text-lg leading-relaxed mb-6 text-stone">
+                Founded by <span className="font-semibold text-ink">Acheampong E. S. Builderman</span>, a theologian,
+                management consultant, and prolific writer, author of seven compelling, life-transformational books
                 who has already completed over 22 manuscripts and counting since August 2018.
               </p>
-              <p className="font-display text-xl font-bold text-ink">
+            </div>
+            <div className="flex flex-col gap-5 lg:border-l lg:pl-12 border-stone/20">
+              <p
+                className="font-display font-black text-ink leading-tight"
+                style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
+              >
                 Our mission is to simplify the path to authorship.
               </p>
-              <p className="font-body text-base leading-relaxed text-stone mt-4">
+              <p className="font-body text-sm leading-relaxed text-stone">
                 We have developed a streamlined process designed to fast-track your journey, turning your
                 vision into a professional publication.
               </p>
-            </blockquote>
+            </div>
           </div>
         </section>
 
