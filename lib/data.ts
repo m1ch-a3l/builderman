@@ -145,49 +145,49 @@ export const pressQuotes: PressQuote[] = [
   {
     id: "1",
     quote:
-      "Rev. Builderman writes with prophetic urgency and pastoral care. Africa Beware is the kind of book the continent has been waiting for.",
-    source: "African Christian Review",
-    publication: "African Christian Review",
-    book: "Africa Beware",
+      "There is a particular kind of book that does not simply ask to be read. It asks to be obeyed. By the final pages, it has become something closer to a commission.",
+    source: "Mr. Kofi A. B. Baidoo",
+    publication: "Mr. Kofi A. B. Baidoo",
+    book: "The Ministry of Writing",
   },
   {
     id: "2",
     quote:
-      "Charismatic Hoax is a courageous act of love — clear, deeply researched, and desperately needed in today's church.",
-    source: "Faith & Culture Quarterly",
-    publication: "Faith & Culture Quarterly",
-    book: "Charismatic Hoax",
+      "SIZESTEPS is required reading for any young person who has ever felt too small, too slow, or too hidden to matter. It will correct that lie with Scripture, with wisdom, and with the quiet authority of a life that proves the message.",
+    source: "Mrs. Abena Baidoo",
+    publication: "Mrs. Abena Baidoo",
+    book: "Size Steps",
   },
   {
     id: "3",
     quote:
-      "The Ministry of Writing is both an invitation and a summons. Every Christian who has ever felt called to write should read it.",
-    source: "Leadership Africa",
-    publication: "Leadership Africa",
-    book: "The Ministry of Writing",
+      "The Buildermans answer with their own scars still visible, and the answer is yes.",
+    source: "Mrs. Faustina Agyemang Duah",
+    publication: "Mrs. Faustina Agyemang Duah",
+    book: "Thanksgiving Manifesto",
   },
   {
     id: "4",
     quote:
-      "Size Steps will challenge every reader to stop despising the day of small beginnings and trust God's pace of formation.",
-    source: "Transformational Leadership Journal",
-    publication: "Transformational Leadership Journal",
-    book: "Size Steps",
+      "This is a fierce and closely reasoned defence of authentic charismatic faith against the very forces that have hollowed it out from within.",
+    source: "Mrs. Lydia Adjei",
+    publication: "Mrs. Lydia Adjei",
+    book: "Charismatic Hoax",
   },
   {
     id: "5",
     quote:
-      "Oversalting the Earth asks the hardest questions about Christian witness in the modern world — and answers them with grace.",
-    source: "Theology & Society",
-    publication: "Theology & Society",
+      "This is a book written from inside the faith it examines, by someone who clearly loves the church too much to let her off easily, and it lands with both conviction and tenderness in equal measure.",
+    source: "Pastor Samuel Nkansah",
+    publication: "Pastor Samuel Nkansah",
     book: "Oversalting the Earth",
   },
   {
     id: "6",
     quote:
-      "Thanksgiving Manifesto is a timely, Spirit-breathed corrective to a generation raised on entitlement and distracted from worship.",
-    source: "Ghana Christian Post",
-    publication: "Ghana Christian Post",
-    book: "Thanksgiving Manifesto",
+      "The book closes not with despair but with a charter and a challenge, calling a rising generation to choose stewardship over theft, in whatever office, however small, they hold.",
+    source: "Squadron Leader Kwaku Gyamfi Bediako-Dinkunim",
+    publication: "Squadron Leader Kwaku Gyamfi Bediako-Dinkunim",
+    book: "Africa Beware",
   },
 ];

@@ -361,10 +361,10 @@ export default function Home() {
               ))}
             </div>
             <Animate variant="fadeUp" className="mt-10 text-center">
-              <Link href="/press"
+              <Link href="/books"
                 className="inline-flex items-center text-sm font-body font-medium tracking-wide underline underline-offset-4"
                 style={{ color: "#4EC5BF" }}>
-                View all press →
+                Browse all books →
               </Link>
             </Animate>
           </div>

@@ -92,19 +92,20 @@ export default function BookSlider({
                 {book.longDescription}
               </p>
 
-              <div className="mt-10 pt-8 border-t border-stone/20">
-                <p className="text-stone text-sm italic mb-2">Also available at:</p>
-                <div className="flex flex-wrap gap-4">
-                  {["Bookshop.org", "Amazon", "Barnes & Noble", "IndieBound"].map((store) => (
-                    <span
-                      key={store}
-                      className="text-sm text-stone/70 underline underline-offset-2 cursor-not-allowed"
-                      title="Demo — links not active"
-                    >
-                      {store}
-                    </span>
-                  ))}
-                </div>
+              <div className="mt-10 pt-8 border-t border-stone/20 flex flex-wrap gap-4 items-center">
+                <a
+                  href={`/books/${book.slug}/review`}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-stone/30 text-sm font-body text-stone hover:text-ink hover:border-ink transition-colors"
+                >
+                  Read Review
+                </a>
+                <a
+                  href="/store"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-body font-semibold transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0B1440", color: "#fff" }}
+                >
+                  Get this book
+                </a>
               </div>
             </div>
           </motion.div>
